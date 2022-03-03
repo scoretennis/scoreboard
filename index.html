@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scoreboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="all">
+        <div class="scoreboard">
+            <div ID="sc_bg"></div>
+                <div ID="serve_p1"></div>
+                <div ID="serve_p2"></div>
+
+                <div ID="p1_box">
+                    <span ID="p1_textname"></span>
+                </div>
+                <div ID="p2_box">
+                    <span ID="p2_textname"></span>
+                </div>
+
+                <div ID="main_score_bg_p1">
+                    <div ID="main_score_rgb_p1">
+                        <span ID="p1_ms_text">0</span>
+                    </div>
+                </div>
+                <div ID="main_score_bg_p2">
+                    <div ID="main_score_rgb_p2">
+                        <span ID="p2_ms_text">0</span>
+                    </div>
+                </div>
+
+                <div ID="set1_p1">
+                    <span ID="set1_p1_text">0</span>
+                </div> 
+                <div ID="set1_p2">
+                    <span ID="set1_p2_text">0</span>
+                </div> 
+                <div ID="set2_p1">
+                    <span ID="set2_p1_text">0</span>
+                </div> 
+                <div ID="set2_p2">
+                    <span ID="set2_p2_text">0</span>
+                </div> 
+                <div ID="set3_p1">
+                    <span ID="set3_p1_text">0</span>
+                </div> 
+                <div ID="set3_p2">
+                    <span ID="set3_p2_text">0</span>
+                </div> 
+                <div ID="set4_p1">
+                    <span ID="set4_p1_text">0</span>
+                </div> 
+                <div ID="set4_p2">
+                    <span ID="set4_p2_text">0</span>
+                </div> 
+                <div ID="set5_p1">
+                    <span ID="set5_p1_text">0</span>
+                </div> 
+                <div ID="set5_p2">
+                    <span ID="set5_p2_text">0</span>
+                </div> 
+
+                </div>
+        </div>
+        <div class="players_form">
+            <div ID="pf_bg"></div>
+                <label for="inputp1" id="p1input">Введите имя игрока 1</label>
+                <input type="text" id="p1" placeholder ="ИГРОК 1" onkeyup="p1_nametx()">
+                <label for="inputp2" id="p2input">Введите имя игрока 2</label>
+                <input type="text" id="p2" placeholder ="ИГРОК 2" onkeyup="p2_nametx()">
+        </div>
+        
+    </div>
+
+    <div class="control">
+        <div ID="controlset_bg">
+            <div ID="set1_control_header">CЕТ 1</div>
+                <div ID="set1_control_main">
+                    <h1 ID="smtx1">СЕТ 1</h1>
+                    <h1 ID="smtx2">ИГРОК 1</h1>
+                    <h1 ID="smtx3">ИГРОК 2</h1>
+                    <button onclick="show_s1()" ID="s1_show">+/-</button>
+                    <button onclick="addscore_set()" ID="p1_plus">+</button>
+                    <button onclick="addscore_set()"ID="p1_minus">-</button>
+                    <button onclick="addscore_set()" ID="p2_plus">+</button>
+                    <button onclick="addscore_set()" ID="p2_minus">-</button>
+                </div>
+            <div ID="set2_control_header">СЕТ 2</div>
+                <div ID="set2_main">
+                    <h1 ID="smtx1_s2">СЕТ 2</h1>
+                    <h1 ID="smtx2_s2">ИГРОК 1</h1>
+                    <h1 ID="smtx3_s2">ИГРОК 2</h1>
+                    <button onclick="show_s2()" ID="s2_show">+/-</button>
+                    <button onclick="addscore_set()" ID="s2_p1_plus">+</button>
+                    <button onclick="addscore_set()"ID="s2_p1_minus">-</button>
+                    <button onclick="addscore_set()" ID="s2_p2_plus">+</button>
+                    <button onclick="addscore_set()" ID="s2_p2_minus">-</button> 
+                </div>
+            <div ID="set3_control_header">СЕТ 3</div>
+                <div ID="set3_main">
+                    <h1 ID="smtx1_s3">СЕТ 3</h1>
+                    <h1 ID="smtx2_s3">ИГРОК 1</h1>
+                    <h1 ID="smtx3_s3">ИГРОК 2</h1>
+                    <button onclick="show_s3()" ID="s3_show">+/-</button>
+                    <button onclick="addscore_set()" ID="s3_p1_plus">+</button>
+                    <button onclick="addscore_set()"ID="s3_p1_minus">-</button>
+                    <button onclick="addscore_set()" ID="s3_p2_plus">+</button>
+                    <button onclick="addscore_set()" ID="s3_p2_minus">-</button> 
+                </div>
+                <div ID="set4_control_header">СЕТ 4</div>
+                <div ID="set4_main">
+                    <h1 ID="smtx1_s4">СЕТ 4</h1>
+                    <h1 ID="smtx2_s4">ИГРОК 1</h1>
+                    <h1 ID="smtx3_s4">ИГРОК 2</h1>
+                    <button onclick="show_s4()" ID="s4_show">+/-</button>
+                    <button onclick="addscore_set()" ID="s4_p1_plus">+</button>
+                    <button onclick="addscore_set()"ID="s4_p1_minus">-</button>
+                    <button onclick="addscore_set()" ID="s4_p2_plus">+</button>
+                    <button onclick="addscore_set()" ID="s4_p2_minus">-</button> 
+                </div>
+                <div ID="set5_control_header">СЕТ 5</div>
+                <div ID="set5_main">
+                    <h1 ID="smtx1_s5">СЕТ 5</h1>
+                    <h1 ID="smtx2_s5">ИГРОК 1</h1>
+                    <h1 ID="smtx3_s5">ИГРОК 2</h1>
+                    <button onclick="show_s5()" ID="s5_show">+/-</button>
+                    <button onclick="addscore_set()" ID="s5_p1_plus">+</button>
+                    <button onclick="addscore_set()"ID="s5_p1_minus">-</button>
+                    <button onclick="addscore_set()" ID="s5_p2_plus">+</button>
+                    <button onclick="addscore_set()" ID="s5_p2_minus">-</button> 
+                </div>
+        </div>
+        <div ID="controlMS_bg">
+            <button onclick = "serve_p1()" ID="btn_serve_p1">И1</button>
+            <button onclick = "serve_p2()"ID="btn_serve_p2">И2</button>
+            <button ID="p1_null">0</button>
+            <button ID="p1_fiveteen">15</button>
+            <button ID="p1_thirty">30</button>
+            <button ID="p1_forty">40</button>
+            <button ID="p1_adv">Ad</button>
+            <button ID="p2_null">0</button>
+            <button ID="p2_fiveteen">15</button>
+            <button ID="p2_thirty">30</button>
+            <button ID="p2_forty">40</button>
+            <button ID="p2_adv">Ad</button>
+            <button ID="reset">СБРОСИТЬ</button>
+        </div>
+        
+    </div>
+    
+
+    </div>
+</body>
+</html>
